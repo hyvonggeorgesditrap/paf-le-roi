@@ -8,14 +8,13 @@ using System;
 public class PlayfabManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void Awake() {
-        Login();
+    void Awake() {
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        Login();
     }
 
     void Login() {
