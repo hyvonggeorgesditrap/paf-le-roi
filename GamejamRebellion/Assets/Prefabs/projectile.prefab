@@ -126,7 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poids: 0
+  poids: 10
+  couleurTrainer: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7564691659698984329
 GameObject:
   m_ObjectHideFlags: 0
