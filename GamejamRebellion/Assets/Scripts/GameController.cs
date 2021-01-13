@@ -34,6 +34,9 @@ public class GameController : MonoBehaviour
     }
 
     private void Start() {
+
+        bestScoreText.text = "Meilleur score : " + bestScore.ToString();
+
         StartCoroutine(StartTimer());
 
         updateAffichageHealth();
@@ -63,7 +66,6 @@ public class GameController : MonoBehaviour
     void Update()
     {
         scoreText.text = score.ToString();
-        bestScoreText.text = "Meilleur score : " + bestScore.ToString();
     }
 
     public void AugmenterTemps() {
