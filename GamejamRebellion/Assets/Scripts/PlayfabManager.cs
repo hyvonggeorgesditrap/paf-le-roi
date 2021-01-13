@@ -8,8 +8,7 @@ using System;
 public class PlayfabManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
+    private void Awake() {
         Login();
     }
 
@@ -66,22 +65,23 @@ public class PlayfabManager : MonoBehaviour
         };
         PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnNameUpdated, OnError);
     }
-    public void GetPersonalLeaderBoard()
+    public void GetPersonalLeaderBoard(Action<int> resultCallback)
     {
+        int score = 0;
         var request = new GetLeaderboardAroundPlayerRequest
         {
             StatisticName = "Score",
             MaxResultsCount = 1,
             PlayFabId = null
         };
-        PlayFabClientAPI.GetLeaderboardAroundPlayer(request, OnPersonalLeaderboardGet, OnError);
+        PlayFabClientAPI.GetLeaderboardAroundPlayer(request, (GetLeaderboardAroundPlayerResult obj) => { resultCallback(OnPersonalLeaderboardGet(obj)); }, OnError);
     }
 
-    void OnPersonalLeaderboardGet(GetLeaderboardAroundPlayerResult obj)
+    int OnPersonalLeaderboardGet(GetLeaderboardAroundPlayerResult obj)
     {
         Debug.Log("Got personal leaderboard!");
         var dernierScore = obj.Leaderboard[0];
-        Debug.Log(dernierScore.DisplayName + " " + dernierScore.StatValue);
+        return dernierScore.StatValue;
     }
 
 

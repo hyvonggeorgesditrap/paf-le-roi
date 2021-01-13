@@ -23,6 +23,9 @@ public class GameController : MonoBehaviour
     public Image healthBarImage;
 
     private bool gamePlaying;
+
+    private PlayfabManager playfabManager = null;
+
     public void BeginGame()
     {
         Debug.Log("Le jeu se lance");
@@ -35,6 +38,16 @@ public class GameController : MonoBehaviour
 
         updateAffichageHealth();
         afficherCombo();
+
+        //Recuperer la session
+        playfabManager = FindObjectOfType<PlayfabManager>();
+        //Afficher le dernier score
+        //playfabManager.GetPersonalLeaderBoard(afficherDernierScore);
+    }
+
+    void afficherDernierScore(int obj) {
+        bestScore = obj;
+        Debug.Log("AFFICHAGE DU DERNIER SCORE!! " + obj);
     }
 
     IEnumerator StartTimer()
