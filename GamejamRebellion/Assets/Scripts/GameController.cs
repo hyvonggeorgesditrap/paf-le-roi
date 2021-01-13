@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public int score;
     public int bestScore;
 
+    public int timerSeconds = 3;
+
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI comboText;
@@ -16,9 +18,25 @@ public class GameController : MonoBehaviour
     public void BeginGame()
     {
         Debug.Log("Le jeu se lance");
-        
 
         //gamePlaying = true;
+
+    }
+
+    private void Start()
+    {
+        StartCoroutine(StartTimer());
+
+    }
+
+    IEnumerator StartTimer()
+    {
+        while(timerSeconds > 0)
+        {
+            Debug.Log(timerSeconds);
+            yield return new WaitForSecondsRealtime(1);
+            timerSeconds--;
+        }
     }
 
     void Update()
