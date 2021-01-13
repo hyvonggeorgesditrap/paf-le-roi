@@ -10,7 +10,7 @@ public class Tir : MonoBehaviour
     private float force = 10;
 
     public int poids;
-
+    public int hauteurCible;
     private float VideCooldown = 1;
     private float NextVide = 0;
 
@@ -44,7 +44,9 @@ public class Tir : MonoBehaviour
                     Debug.Log("Tir sur un objet");
 
                     rb = objet.GetComponent<Rigidbody>();
-                    Vector3 direction = target.position - objet.transform.position;
+                    Vector3 targetPosition = new Vector3(target.position.x, target.position.y + hauteurCible, target.position.z);
+                    Vector3 direction = targetPosition - objet.transform.position;
+
                     rb.velocity = Vector3.zero;
                     rb.AddForce(direction.normalized * force, ForceMode.Impulse);
                 }

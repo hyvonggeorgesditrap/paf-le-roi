@@ -82,6 +82,7 @@ public class GameController : MonoBehaviour
 
     public void ResetCombo() {
         Time.timeScale = 1;
+        hitConsecutif = 0;
         combo = 1;
         afficherCombo();
         GererMusique();
@@ -116,7 +117,6 @@ public class GameController : MonoBehaviour
     void OnTriggerExit(Collider other) {
         // Destroy Projectile that leaves the trigger
         if (other.gameObject.tag == "Projectile") {
-
             //Reduire la vie
             addHealth(0 - other.GetComponent<Projectile>().poids);
             //'Briser' le combo
@@ -127,6 +127,11 @@ public class GameController : MonoBehaviour
     }
 
     public void GererMusique() {
-        musique.pitch = float.Parse("1."+combo);
+        if (combo == 1)  {
+            musique.pitch = (float)1.0;
+        }
+        else {
+            musique.pitch = float.Parse("1." + combo);
+        }
     }
 }
