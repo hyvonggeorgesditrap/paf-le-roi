@@ -28,9 +28,9 @@ public class spawner : MonoBehaviour
         int spawnerID = Random.Range(0, spawners.Count);
         int objectID = Random.Range(0, ListObjets.Count);
         GameObject objet = Instantiate(ListObjets[objectID], spawners[spawnerID].transform.position, Quaternion.identity);
-        int velocite = Random.Range(2, 5);
-        Vector3 camPos = new Vector3(cam.transform.position.x, cam.transform.position.y, 0f);
-        Vector3 impulse = velocite * (camPos - objet.transform.position);
+        int velocite = Random.Range(5, 8);
+        Vector3 target = new Vector3(cam.transform.position.x, cam.transform.position.y + 2, spawners[spawnerID].transform.position.z);
+        Vector3 impulse = velocite * (target - objet.transform.position);
         objet.GetComponent<Rigidbody>().AddForce(impulse, ForceMode.Impulse);
 
 
