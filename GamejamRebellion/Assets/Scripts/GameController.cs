@@ -19,7 +19,6 @@ public class GameController : MonoBehaviour
     public int combo = 1;
 
     public int timerSeconds = 3;
-    public Camera cam;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI comboText;
@@ -27,6 +26,8 @@ public class GameController : MonoBehaviour
 
     private bool gamePlaying;
 
+    [SerializeField]
+    private AudioSource musique;
     private PlayfabManager playfabManager = null;
 
     public void BeginGame()
@@ -43,7 +44,6 @@ public class GameController : MonoBehaviour
         playfabManager.GetPersonalLeaderBoard(afficherDernierScore);
 
         StartCoroutine(StartTimer());
-        cam = Camera.main;
         updateAffichageHealth();
         afficherCombo();
     }
@@ -94,26 +94,6 @@ public class GameController : MonoBehaviour
         ResetCombo();
     }
 
-    public void ChangerCouleur() {
-        switch (combo) {
-            case 1:
-                Debug.Log("Couleur Blanc");
-                break;
-            case 2:
-                Debug.Log("Couleur jaune");
-                break;
-            case 3:
-                Debug.Log("Couleur orange");
-                break;
-            case 4:
-                Debug.Log("Couleur bleu");
-                break;
-            default:
-
-                break;
-        }
-    }
-
     public void touchee(int poids) {
         AddScore(poids);
         AugmenterTemps();
@@ -146,8 +126,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void GererMusique()
-    {
-        cam.GetComponent<AudioSource>().pitch++;
+    public void GererMusique() {
+        musique.pitch = float.Parse("1."+combo);
     }
 }
