@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public int bestScore;
 
     public int hitConsecutif = 0;
-    public int boost = 1;
+    public int combo = 1;
 
     public int timerSeconds = 3;
 
@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
         StartCoroutine(StartTimer());
 
         updateAffichageHealth();
-        afficherBoost();
+        afficherCombo();
     }
 
     IEnumerator StartTimer()
@@ -58,28 +58,28 @@ public class GameController : MonoBehaviour
         if (hitConsecutif > 4) {
             Time.timeScale += 0.2f;
             hitConsecutif = 0;
-            boost++;
-            afficherBoost();
+            combo++;
+            afficherCombo();
         }
     }
 
-    void afficherBoost() { comboText.text = "Combo X" + boost; }
+    void afficherCombo() { comboText.text = "Combo X" + combo; }
 
-    public void ResetBoost() {
+    public void ResetCombo() {
         Time.timeScale = 1;
-        boost = 1;
-        afficherBoost();
+        combo = 1;
+        afficherCombo();
     }
 
     public void Pause() {
         Time.timeScale = 0;
     }
     public void Play() {
-        ResetBoost();
+        ResetCombo();
     }
 
     public void ChangerCouleur() {
-        switch (boost) {
+        switch (combo) {
             case 1:
                 Debug.Log("Couleur Blanc");
                 break;
@@ -104,7 +104,7 @@ public class GameController : MonoBehaviour
     }
 
     private void AddScore(int a_objet) {
-        score += a_objet * boost;
+        score += a_objet * combo;
     }
 
     public void addHealth(int damageAmout) {
@@ -123,6 +123,8 @@ public class GameController : MonoBehaviour
 
             //Reduire la vie
             addHealth(0 - other.GetComponent<Projectile>().poids);
+            //'Briser' le combo
+            ResetCombo();
             //Detruire l'objet
             Destroy(other.gameObject);
         }
