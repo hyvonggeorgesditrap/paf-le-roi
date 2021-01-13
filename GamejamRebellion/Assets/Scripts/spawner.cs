@@ -14,7 +14,6 @@ public class spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("allo");
         InvokeRepeating("Spawn", 2, vitesseSpawn);
     }
 
@@ -27,9 +26,7 @@ public class spawner : MonoBehaviour
     void Spawn()
     {
         int spawnerID = Random.Range(0, spawners.Count);
-        Debug.Log(spawnerID);
         int objectID = Random.Range(0, ListObjets.Count);
-        Debug.Log(objectID);
         GameObject objet = Instantiate(ListObjets[objectID], spawners[spawnerID].transform.position, Quaternion.identity);
         int velocite = Random.Range(2, 5);
         Vector3 camPos = new Vector3(cam.transform.position.x, cam.transform.position.y, 0f);
