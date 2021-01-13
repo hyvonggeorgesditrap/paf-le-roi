@@ -12,6 +12,9 @@ public class GameController : MonoBehaviour
     public int score;
     public int bestScore;
 
+    public int hitConsecutif = 0;
+    public int boost = 1;
+
     public int timerSeconds = 3;
 
     public TextMeshProUGUI scoreText;
@@ -23,15 +26,15 @@ public class GameController : MonoBehaviour
     public void BeginGame()
     {
         Debug.Log("Le jeu se lance");
-        updateAffichageHealth();
         //gamePlaying = true;
 
     }
 
-    private void Start()
-    {
+    private void Start() {
         StartCoroutine(StartTimer());
 
+        updateAffichageHealth();
+        afficherBoost();
     }
 
     IEnumerator StartTimer()
@@ -48,23 +51,69 @@ public class GameController : MonoBehaviour
     {
         scoreText.text = score.ToString();
         bestScoreText.text = "Meilleur score : " + bestScore.ToString();
-        comboText.text = "Combo";
     }
 
-    public void AddScore(int a_objet)
-    {
-        score += a_objet;
+    public void AugmenterTemps() {
+        hitConsecutif++;
+        if (hitConsecutif > 4) {
+            Time.timeScale += 0.2f;
+            hitConsecutif = 0;
+            boost++;
+            afficherBoost();
+        }
     }
 
-    public void addHealth(int damageAmout)
-    {
+    void afficherBoost() { comboText.text = "Combo X" + boost; }
+
+    public void ResetBoost() {
+        Time.timeScale = 1;
+        boost = 1;
+        afficherBoost();
+    }
+
+    public void Pause() {
+        Time.timeScale = 0;
+    }
+    public void Play() {
+        ResetBoost();
+    }
+
+    public void ChangerCouleur() {
+        switch (boost) {
+            case 1:
+                Debug.Log("Couleur Blanc");
+                break;
+            case 2:
+                Debug.Log("Couleur jaune");
+                break;
+            case 3:
+                Debug.Log("Couleur orange");
+                break;
+            case 4:
+                Debug.Log("Couleur bleu");
+                break;
+            default:
+
+                break;
+        }
+    }
+
+    public void touchee(int poids) {
+        AddScore(poids);
+        AugmenterTemps();
+    }
+
+    private void AddScore(int a_objet) {
+        score += a_objet * boost;
+    }
+
+    public void addHealth(int damageAmout) {
         health += damageAmout;
         health = Mathf.Clamp(health, 0f, maxHealth);
         updateAffichageHealth();
     }
 
-    void updateAffichageHealth()
-    {
+    void updateAffichageHealth() {
         healthBarImage.fillAmount = health / maxHealth;
     }
 

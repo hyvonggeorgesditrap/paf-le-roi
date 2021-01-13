@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision) {
         if (statue != null && gameController != null && statue.GetInstanceID() == collision.gameObject.GetInstanceID()) {
             Debug.Log("Le projectile "+gameObject.name+" est entrer en collision avec la statue!");
-            gameController.AddScore(poids);
+            gameController.touchee(poids);
             Destroy(gameObject);
         } 
     }
