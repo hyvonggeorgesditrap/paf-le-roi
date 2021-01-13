@@ -64,7 +64,7 @@ public class PlayfabManager : MonoBehaviour
         };
         PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnNameUpdated, OnError);
     }
-    public void GetPersonalLeaderBoard(Action<int> resultCallback)
+    public void GetPersonalLeaderBoard(Action<GetLeaderboardAroundPlayerResult> callback)
     {
         int score = 0;
         var request = new GetLeaderboardAroundPlayerRequest
@@ -73,7 +73,7 @@ public class PlayfabManager : MonoBehaviour
             MaxResultsCount = 1,
             PlayFabId = null
         };
-        PlayFabClientAPI.GetLeaderboardAroundPlayer(request, (GetLeaderboardAroundPlayerResult obj) => { resultCallback(OnPersonalLeaderboardGet(obj)); }, OnError);
+        PlayFabClientAPI.GetLeaderboardAroundPlayer(request, callback, OnError);
     }
 
     int OnPersonalLeaderboardGet(GetLeaderboardAroundPlayerResult obj)

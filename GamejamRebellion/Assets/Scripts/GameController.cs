@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using PlayFab.ClientModels;
 using TMPro;
 
 public class GameController : MonoBehaviour
@@ -47,8 +48,8 @@ public class GameController : MonoBehaviour
         afficherCombo();
     }
 
-    void afficherDernierScore(int obj) {
-        bestScoreText.text = "Dernier score : " + obj.ToString();
+    void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
+        bestScoreText.text = "Dernier score : " + obj.Leaderboard[0].StatValue;
     }
 
     IEnumerator StartTimer()

@@ -9,11 +9,9 @@ using TMPro;
 public class MenuScore : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI[] ListeNomLeaderBoard = new TextMeshProUGUI[3];
+    private TextMeshProUGUI[] ListeNom = new TextMeshProUGUI[4];
     [SerializeField]
-    private TextMeshProUGUI[] ListeScoreLeaderBoard = new TextMeshProUGUI[3];
-    [SerializeField]
-    private TextMeshProUGUI textDernierScore;
+    private TextMeshProUGUI[] ListeScore = new TextMeshProUGUI[4];
 
     [SerializeField]
     private PlayfabManager playfabManager = null;
@@ -21,10 +19,10 @@ public class MenuScore : MonoBehaviour
 
     void Start() {
         //vider les champ du leaderboard
-        /*for (int i = 0; i < 3; i++) {
-            ListeNomLeaderBoard[i].text = "";
-            ListeScoreLeaderBoard[i].text = "";
-        }*/
+        for (int i = 0; i < 3; i++) {
+            ListeNom[i].text = "";
+            ListeScore[i].text = "";
+        }
     }
 
     public void Afficher()
@@ -36,16 +34,22 @@ public class MenuScore : MonoBehaviour
         playfabManager.GetPersonalLeaderBoard(modifierDernnierScore);
     }
 
-    private void modifierDernnierScore(int score) {
-        textDernierScore.text = ""+score;
+    private void modifierDernnierScore(GetLeaderboardAroundPlayerResult obj) {
+        ListeNom[3].text = obj.Leaderboard[0].DisplayName;
+        ListeScore[3].text = " : "+ obj.Leaderboard[0].StatValue;
     }
 
     private void modifierMeilleurScores(GetLeaderboardResult obj)
     {
         for (int i = 0; i < 3; i++) {
-            if (i < obj.Leaderboard.Count) {
-                ListeNomLeaderBoard[i].text = obj.Leaderboard[i].DisplayName;
-                ListeScoreLeaderBoard[i].text = ": "+obj.Leaderboard[i].StatValue;
+            if (i < obj.Leaderboard.Count)
+            {
+                ListeNom[i].text = obj.Leaderboard[i].DisplayName;
+                ListeScore[i].text = ": " + obj.Leaderboard[i].StatValue;
+            }
+            else {
+                ListeNom[i].text = "";
+                ListeScore[i].text = "";
             }
         }
     }
