@@ -1,14 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using PlayFab;
 using PlayFab.ClientModels;
+using TMPro;
 
 public class MenuScore : MonoBehaviour
 {
     [SerializeField]
+    private TextMeshProUGUI[] ListeNomLeaderBoard = new TextMeshProUGUI[3];
+    [SerializeField]
+    private TextMeshProUGUI[] ListeScoreLeaderBoard = new TextMeshProUGUI[3];
+    [SerializeField]
+    private TextMeshProUGUI textDernierScore;
+
+    [SerializeField]
     private PlayfabManager playfabManager = null;
     // Start is called before the first frame update
+
+    void Start() {
+        //vider les champ du leaderboard
+        /*for (int i = 0; i < 3; i++) {
+            ListeNomLeaderBoard[i].text = "";
+            ListeScoreLeaderBoard[i].text = "";
+        }*/
+    }
 
     public void Afficher()
     {
@@ -20,13 +37,16 @@ public class MenuScore : MonoBehaviour
     }
 
     private void modifierDernnierScore(int score) {
-        Debug.Log("Dernier score : "+score);
+        textDernierScore.text = ""+score;
     }
 
     private void modifierMeilleurScores(GetLeaderboardResult obj)
     {
-        foreach (var item in obj.Leaderboard) {
-            Debug.Log(item.Position + " " + item.DisplayName + " " + item.StatValue);
+        for (int i = 0; i < 3; i++) {
+            if (i < obj.Leaderboard.Count) {
+                ListeNomLeaderBoard[i].text = obj.Leaderboard[i].DisplayName;
+                ListeScoreLeaderBoard[i].text = ": "+obj.Leaderboard[i].StatValue;
+            }
         }
     }
 }
