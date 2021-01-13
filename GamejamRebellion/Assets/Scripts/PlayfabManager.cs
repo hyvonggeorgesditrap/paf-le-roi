@@ -45,7 +45,7 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
     }
 
-    public void GetLeaderboard()
+    public void GetLeaderboard(Action<GetLeaderboardResult> callback)
     {
         var request = new GetLeaderboardRequest
         {
@@ -53,7 +53,7 @@ public class PlayfabManager : MonoBehaviour
             StartPosition = 0,
             MaxResultsCount = 10
         };
-        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
+        PlayFabClientAPI.GetLeaderboard(request, callback, OnError);
     }
 
     private void setName(String name)
@@ -92,14 +92,6 @@ public class PlayfabManager : MonoBehaviour
     void OnLeaderboardUpdate(UpdatePlayerStatisticsResult obj)
     {
         Debug.Log("Succes de l'envoie du leaderboard");
-    }
-
-    void OnLeaderboardGet(GetLeaderboardResult obj)
-    {
-        foreach (var item in obj.Leaderboard)
-        {
-            Debug.Log(item.Position + " " + item.DisplayName + " " + item.StatValue);
-        }
     }
 
     void OnSuccess(LoginResult obj)
