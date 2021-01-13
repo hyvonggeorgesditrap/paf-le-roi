@@ -5,40 +5,23 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public int health;
-    public int numOfHearts;
+    public float health;
+    public float maxHealth;
+    public Image healthBarImage;
 
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
-
-    private void Update()
+    void Update()
     {
+        healthBarImage.fillAmount = health / maxHealth;
+        health = Mathf.Clamp(health, 0f, maxHealth);
+    }
 
-        if (health > numOfHearts)
-        {
-            health = numOfHearts;
-        }
+    public void Damage(int damageAmout)
+    {
+        health -= damageAmout;
+    }
 
-        for (int i = 0; i < hearts.Length; i++)
-        {
-
-            if (i < health)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-            if (i < numOfHearts)
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
-            }
-        }
+    public void Heal(int healAmout)
+    {
+        health += healAmout;
     }
 }
