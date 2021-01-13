@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField]
     public int poids;
-    public Color couleurTrainer;
+    public TrailRenderer trail;
     private GameObject statue = null;
     private GameController gameController = null;
 
@@ -14,27 +14,29 @@ public class Projectile : MonoBehaviour
     void Start() {
         statue = FindObjectOfType<Statue>().gameObject;
         gameController = FindObjectOfType<GameController>();
-        couleurTrainer = gameObject.GetComponentInChildren<TrailRenderer>().endColor;
+        trail = gameObject.GetComponentInChildren<TrailRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(couleurTrainer);
-        if(Time.timeScale < 1.2)
+        if (Time.timeScale < 1.2f)
         {
-            couleurTrainer = Color.white;
-        }else if (Time.timeScale < 3)
-        {
-            couleurTrainer = Color.yellow;
-        }else if (Time.timeScale < 4)
-        {
-            couleurTrainer = Color.red;
-        }else
-        {
-            couleurTrainer = Color.blue;
+            trail.startColor = Color.white;
         }
-        
+        else if (Time.timeScale < 1.4f)
+        {
+            trail.startColor = Color.yellow;
+        }
+        else if (Time.timeScale < 1.6f)
+        {
+            trail.startColor = Color.red;
+        }
+        else
+        {
+            trail.startColor = Color.magenta;
+        }
+
     }
 
         private void OnCollisionEnter(Collision collision) {

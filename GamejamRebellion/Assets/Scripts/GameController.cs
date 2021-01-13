@@ -6,6 +6,8 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    const float VITESSE_MAX = 2f;
+
     public float health;
     public float maxHealth;
 
@@ -70,7 +72,7 @@ public class GameController : MonoBehaviour
 
     public void AugmenterTemps() {
         hitConsecutif++;
-        if (hitConsecutif > 4) {
+        if (hitConsecutif > 4 && Time.timeScale < VITESSE_MAX) {
             Time.timeScale += 0.2f;
             hitConsecutif = 0;
             combo++;
