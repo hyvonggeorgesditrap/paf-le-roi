@@ -11,8 +11,8 @@ public class Tir : MonoBehaviour
 
     public int poids;
     public int hauteurCible;
-    private float VideCooldown = 1;
-    private float NextVide = 0;
+    private float HitCooldown = (float)0.5;
+    private float NextHit = 0;
 
     [SerializeField]
     private GameController gameController;
@@ -38,7 +38,7 @@ public class Tir : MonoBehaviour
             //Debug.Log(hitData.point);
 
             GameObject objet = hitData.collider.gameObject;
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButton("Fire1") && Time.time > NextHit)
             {
                 if (objet.tag.Equals("Projectile")) {
                     Debug.Log("Tir sur un objet");
@@ -50,13 +50,13 @@ public class Tir : MonoBehaviour
                     rb.velocity = Vector3.zero;
                     rb.AddForce(direction.normalized * force, ForceMode.Impulse);
                 }
-                else if (objet.tag.Equals("Vide") && Time.time > NextVide)
+                else if (objet.tag.Equals("Vide"))
                 {
                     Debug.Log("Tir Dans le Vide!");
-                    NextVide = Time.time + VideCooldown;
                     gameController.addHealth(0 - poids);
                     gameController.ResetCombo();
                 }
+                NextHit = Time.time + HitCooldown;
             }
         }
     }
