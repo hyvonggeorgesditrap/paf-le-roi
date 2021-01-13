@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tir : MonoBehaviour
-{
+{   
     [SerializeField]
     private Transform target;
     [SerializeField]
     private float force = 10;
 
     Rigidbody rb = null;
+
+    [SerializeField]
+    private Texture2D cursor;
+
+    private void Start()
+    {
+        Cursor.SetCursor(cursor, new Vector2(cursor.width/2, cursor.height/2), CursorMode.ForceSoftware);
+    }
 
     void FixedUpdate()
     {
