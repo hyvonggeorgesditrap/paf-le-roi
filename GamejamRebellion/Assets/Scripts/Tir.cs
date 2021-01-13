@@ -36,7 +36,7 @@ public class Tir : MonoBehaviour
                 rb = objet.GetComponent<Rigidbody>();
                 Vector3 direction = target.position-objet.transform.position;
                 rb.velocity = Vector3.zero;
-                rb.AddForce(direction*force, ForceMode.Impulse);
+                rb.AddForce(direction.normalized*force, ForceMode.Impulse);
             }
         }
     }
