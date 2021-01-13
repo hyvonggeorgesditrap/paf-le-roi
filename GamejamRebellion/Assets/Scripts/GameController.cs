@@ -50,4 +50,12 @@ public class GameController : MonoBehaviour
     {
         score += a_objet;
     }
+
+    void OnTriggerExit(Collider other) {
+        // Destroy Projectile that leaves the trigger
+        if (other.gameObject.tag == "Projectile") {
+            Debug.Log("Projectile detruit!");
+            Destroy(other.gameObject);
+        }
+    }
 }

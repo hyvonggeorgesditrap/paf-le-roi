@@ -29,7 +29,7 @@ public class Tir : MonoBehaviour
             Debug.Log(hitData.point);
 
             GameObject objet = hitData.collider.gameObject;
-            if (Input.GetButton("Fire1") && objet.tag.Equals("Object"))
+            if (Input.GetButton("Fire1") && objet.tag.Equals("Projectile"))
             {
                 Debug.Log("Tir sur un objet");
 

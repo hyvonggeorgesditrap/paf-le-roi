@@ -18,9 +18,7 @@ public class Projectile : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
+    { }
 
     private void OnCollisionEnter(Collision collision) {
         if (statue != null && gameController != null && statue.GetInstanceID() == collision.gameObject.GetInstanceID()) {
