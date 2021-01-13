@@ -12,24 +12,14 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 1f;
     
     void Update()
-    {
-        //if(playButton != null)
-            //playButton.onClick.AddListener(LoadNextLevel);
-        if (Input.GetMouseButtonDown(0))
-            LoadNextLevel();
+    {}
 
-        
-    }
-
-    public void LoadNextLevel()
-    {
-        //playButton.onClick.RemoveAllListeners();
+    public void LoadNextLevel() {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     IEnumerator LoadLevel(int levelIndex)
     {
-        
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndex);
