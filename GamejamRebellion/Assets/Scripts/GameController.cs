@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     public int combo = 1;
 
     public int timerSeconds = 3;
-
+    public Camera cam;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI comboText;
@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
         playfabManager.GetPersonalLeaderBoard(afficherDernierScore);
 
         StartCoroutine(StartTimer());
-
+        cam = Camera.main;
         updateAffichageHealth();
         afficherCombo();
     }
@@ -74,6 +74,7 @@ public class GameController : MonoBehaviour
             hitConsecutif = 0;
             combo++;
             afficherCombo();
+            GererMusique();
         }
     }
 
@@ -83,6 +84,7 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
         combo = 1;
         afficherCombo();
+        GererMusique();
     }
 
     public void Pause() {
@@ -142,5 +144,10 @@ public class GameController : MonoBehaviour
             //Detruire l'objet
             Destroy(other.gameObject);
         }
+    }
+
+    public void GererMusique()
+    {
+        cam.GetComponent<AudioSource>().pitch++;
     }
 }
