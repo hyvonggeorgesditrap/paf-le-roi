@@ -27,6 +27,64 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
     }
 
+    public void envoyerScore(int score, string nom)
+    {
+        setName(nom);
+        SendLeaderboard(score);
+    }
+
+    private void SendLeaderboard(int score)
+    {
+        var request = new UpdatePlayerStatisticsRequest
+        {
+            Statistics = new List<StatisticUpdate> {
+                new StatisticUpdate{
+                    StatisticName = "Score",
+                    Value = score
+                }
+            }
+        };
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderboardUpdate, OnError);
+    }
+
+    public void GetLeaderboard()
+    {
+        var request = new GetLeaderboardRequest
+        {
+            StatisticName = "Score",
+            StartPosition = 0,
+            MaxResultsCount = 10
+        };
+        PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
+    }
+
+    private void setName(String name)
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = name
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnNameUpdated, OnError);
+    }
+
+    void OnNameUpdated(UpdateUserTitleDisplayNameResult obj)
+    {
+        Debug.Log("Le nom a ete enregistrer!");
+    }
+
+    void OnLeaderboardUpdate(UpdatePlayerStatisticsResult obj)
+    {
+        Debug.Log("Succes de l'envoie du leaderboard");
+    }
+
+    void OnLeaderboardGet(GetLeaderboardResult obj)
+    {
+        foreach (var item in obj.Leaderboard)
+        {
+            Debug.Log(item.Position + " " + item.DisplayName + " " + item.StatValue);
+        }
+    }
+
     void OnSuccess(LoginResult obj)
     {
         Debug.Log("connection/creation de compte complete avec success!");
