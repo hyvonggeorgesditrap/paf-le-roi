@@ -66,6 +66,24 @@ public class PlayfabManager : MonoBehaviour
         };
         PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnNameUpdated, OnError);
     }
+    public void GetPersonalLeaderBoard()
+    {
+        var request = new GetLeaderboardAroundPlayerRequest
+        {
+            StatisticName = "Score",
+            MaxResultsCount = 1,
+            PlayFabId = null
+        };
+        PlayFabClientAPI.GetLeaderboardAroundPlayer(request, OnPersonalLeaderboardGet, OnError);
+    }
+
+    void OnPersonalLeaderboardGet(GetLeaderboardAroundPlayerResult obj)
+    {
+        Debug.Log("Got personal leaderboard!");
+        var dernierScore = obj.Leaderboard[0];
+        Debug.Log(dernierScore.DisplayName + " " + dernierScore.StatValue);
+    }
+
 
     void OnNameUpdated(UpdateUserTitleDisplayNameResult obj)
     {
