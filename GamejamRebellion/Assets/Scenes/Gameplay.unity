@@ -919,7 +919,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   score: 0
-  bestScore: 21
+  bestScore: 0
   hitConsecutif: 0
   combo: 1
   timerSeconds: 3

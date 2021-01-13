@@ -36,23 +36,19 @@ public class GameController : MonoBehaviour
     }
 
     private void Start() {
-
-        bestScoreText.text = "Meilleur score : " + bestScore.ToString();
+        //Recuperer la session
+        playfabManager = FindObjectOfType<PlayfabManager>();
+        //Afficher le dernier score
+        playfabManager.GetPersonalLeaderBoard(afficherDernierScore);
 
         StartCoroutine(StartTimer());
 
         updateAffichageHealth();
         afficherCombo();
-
-        //Recuperer la session
-        playfabManager = FindObjectOfType<PlayfabManager>();
-        //Afficher le dernier score
-        //playfabManager.GetPersonalLeaderBoard(afficherDernierScore);
     }
 
     void afficherDernierScore(int obj) {
-        bestScore = obj;
-        Debug.Log("AFFICHAGE DU DERNIER SCORE!! " + obj);
+        bestScoreText.text = "Dernier score : " + obj.ToString();
     }
 
     IEnumerator StartTimer()
