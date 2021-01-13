@@ -17,13 +17,16 @@ public class gestionTimeScale : MonoBehaviour
             if (Time.timeScale == 2)
             {
                 boostText = "X2";
+                
             }else if (Time.timeScale == 3)
             {
                 boostText = "X3";
+                
             }
             else if (Time.timeScale == 4)
             {
                 boostText = "X4";
+                
             }
         }
    }
@@ -40,5 +43,27 @@ public class gestionTimeScale : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+    public void ChangerCouleur()
+    {
+        switch(boostText)
+        {
+            case "X1":
+                Debug.Log("Couleur Blanc");
+                break;
+            case "X2":
+                Debug.Log("Couleur jaune");
+                break;
+            case "X3":
+                Debug.Log("Couleur orange");
+                break;
+            case "X4":
+                Debug.Log("Couleur bleu");
+                break;
+            default:
+            
+                break;
+        }
 
+    }
 }
+
