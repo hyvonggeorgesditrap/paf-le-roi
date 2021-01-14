@@ -1582,6 +1582,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8918800816759582036, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: isGlobal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8918800816759582036, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8918800816759582036, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: sharedProfile
+      value: 
+      objectReference: {fileID: 11400000, guid: 915f68120f272f24596909e7ebf726f4, type: 2}
+    - target: {fileID: 2134677882273613646, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: volumeLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 7798684868497201144, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
       propertyPath: m_RootOrder
       value: 1
