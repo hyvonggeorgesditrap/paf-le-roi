@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class LevelLoader : MonoBehaviour
 {
     static public string daltonisme;
@@ -18,7 +17,7 @@ public class LevelLoader : MonoBehaviour
     public Button playButton = null;
     public Text daltonismeLabel = null;
     public float transitionTime = 1f;
-    
+    public Toggle toggle;
     void Update()
     {}
 
@@ -39,24 +38,24 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
         Debug.Log(levelIndex);
         Debug.Log("le daltonime est : " + daltonisme);
+        transmettreInfos();
     }
 
     public void setDaltonisme()
     {
-        daltonisme = daltonismeLabel.text;
+        if (toggle.isOn)
+        {
+            daltonisme = daltonismeLabel.text;
+        }
+        else
+        {
+            daltonisme = "sans";
+        }
     }
-
-    public void Protanopi()
+    public void transmettreInfos()
     {
-
-    }
-    public void Deuteranopie()
-    {
-
-    }
-    public void Tritanopie()
-    {
-
+        GameController GC = FindObjectOfType<GameController>();
+        //GC.AppliquerDaltonisme(daltonisme);
     }
 
 }
