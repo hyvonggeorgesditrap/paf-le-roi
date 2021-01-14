@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using PlayFab.ClientModels;
 using TMPro;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private AudioSource musique;
+    [SerializeField]
+    private AudioClip sonTirManque;
     private PlayfabManager playfabManager = null;
 
     public void BeginGame()
@@ -78,6 +81,11 @@ public class GameController : MonoBehaviour
         }
     }
 
+    internal void Missed()
+    {
+        musique.PlayOneShot(sonTirManque);
+    }
+
     void afficherCombo() { comboText.text = "Combo X" + combo; }
 
     public void ResetCombo() {
@@ -112,7 +120,7 @@ public class GameController : MonoBehaviour
         //Si mort
         if (health <= 0) {
             LevelLoader loader = FindObjectOfType<LevelLoader>();
-            loader.LoadNextLevel();
+            loader.LoadFin();
         }
     }
 

@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    private int IndexSceneMenu = 0;
+    private int IndexSceneGameplay = 1;
+    private int IndexSceneFin = 2;
+
 
     public Animator transition;
     public Button playButton = null;
@@ -14,8 +18,14 @@ public class LevelLoader : MonoBehaviour
     void Update()
     {}
 
-    public void LoadNextLevel() {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    public void LoadMenu() {
+        StartCoroutine(LoadLevel(IndexSceneMenu));
+    }
+    public void LoadGameplay() {
+        StartCoroutine(LoadLevel(IndexSceneGameplay));
+    }
+    public void LoadFin() {
+        StartCoroutine(LoadLevel(IndexSceneFin));
     }
 
     IEnumerator LoadLevel(int levelIndex)
