@@ -28,6 +28,11 @@ public class GameController : MonoBehaviour
     private bool gamePlaying;
 
     [SerializeField]
+    private List<Transform> positionsAleatoires;
+    [SerializeField]
+    private GameObject pancarte;
+
+    [SerializeField]
     private AudioSource sourceMusique;
     [SerializeField]
     private AudioSource sourceEffets;
@@ -54,6 +59,9 @@ public class GameController : MonoBehaviour
         playfabManager.isNewBest = false;
         playfabManager.score = 0;
 
+        //Positionner pancarte aléatoire
+        placerPancarte();
+
         StartCoroutine(StartTimer());
         updateAffichageHealth();
         afficherCombo();
@@ -62,6 +70,13 @@ public class GameController : MonoBehaviour
     void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
         bestScore = obj.Leaderboard[0].StatValue;
         bestScoreText.text = "Record : " + obj.Leaderboard[0].StatValue;
+    }
+
+    void placerPancarte()
+    {
+        int index = UnityEngine.Random.Range(0, positionsAleatoires.Count);
+        Transform pancartePosition = positionsAleatoires[index];
+        Instantiate(pancarte, pancartePosition.position, pancartePosition.rotation);
     }
 
     IEnumerator StartTimer()

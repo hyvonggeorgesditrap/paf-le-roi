@@ -3,7 +3,12 @@ guid: 662cc78d4a074b5449731c67214e4784
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pancarteMat
+    second: {fileID: 2100000, guid: 1c3e4087e0c3481478bdb2cb9a8fd87c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
