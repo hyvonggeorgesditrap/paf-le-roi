@@ -112,7 +112,7 @@ public class GameController : MonoBehaviour
         //Si mort
         if (health <= 0) {
             LevelLoader loader = FindObjectOfType<LevelLoader>();
-            loader.LoadNextLevel();
+            loader.LoadFin();
         }
     }
 
