@@ -3,7 +3,12 @@ guid: 4841f460b823ee94586ae7fa6a2849dc
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sceauMat
+    second: {fileID: 2100000, guid: aa41f1323ebcdcb4bb93d878d2ee40b1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
