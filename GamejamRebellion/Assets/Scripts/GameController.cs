@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using PlayFab.ClientModels;
 using TMPro;
 using System;
+using UnityEngine.Rendering.PostProcessing;
 
 public class GameController : MonoBehaviour
 {
@@ -18,13 +19,13 @@ public class GameController : MonoBehaviour
 
     public int hitConsecutif = 0;
     public int combo = 1;
-
+    public Settings sets;
     public int timerSeconds = 3;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI bestScoreText;
     public TextMeshProUGUI comboText;
     public Image healthBarImage;
-
+    public List<PostProcessProfile> profils;
     private bool gamePlaying;
 
     [SerializeField]
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour
     private void Start() {
         //Recuperer la session
         playfabManager = FindObjectOfType<PlayfabManager>();
+        sets = FindObjectOfType<Settings>();
         //Afficher le dernier score
         playfabManager.GetPersonalLeaderBoard(afficherDernierScore);
 
@@ -65,6 +67,8 @@ public class GameController : MonoBehaviour
         StartCoroutine(StartTimer());
         updateAffichageHealth();
         afficherCombo();
+        setupCam();
+        
     }
 
     void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
@@ -179,6 +183,32 @@ public class GameController : MonoBehaviour
             sourceMusique.pitch = float.Parse("1." + combo);
             sourceEffets.pitch = float.Parse("1." + combo);
         }
+    }
+
+    public void setupCam()
+    {
+        if (sets.toggleDaltonisme)
+        {
+         switch (sets.daltonisme)
+         {
+                    case "Protanopia":
+                        Camera.main.GetComponent<PostProcessVolume>().profile = profils[0];
+                        break;
+                    case "Deuteranopia":
+                        Camera.main.GetComponent<PostProcessVolume>().profile = profils[2];
+                        break;
+                    case "Tritanopia":
+                        Camera.main.GetComponent<PostProcessVolume>().profile = profils[1];
+                        break;
+                    default:
+                        Camera.main.GetComponent<PostProcessVolume>().profile = profils[3];
+                        break;
+          }
+        }
+        else
+        {
+            Camera.main.GetComponent<PostProcessVolume>().profile = profils[3];
+        }       
     }
 
 }

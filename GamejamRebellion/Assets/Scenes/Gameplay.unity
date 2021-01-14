@@ -690,7 +690,7 @@ PrefabInstance:
     - target: {fileID: -8918800816759582036, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
       propertyPath: sharedProfile
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 83104c7c3b9ba234dae4662fce8827d3, type: 2}
     - target: {fileID: -6157879495319714134, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
       propertyPath: m_Volume
       value: 1
@@ -4063,11 +4063,17 @@ MonoBehaviour:
   bestScore: 0
   hitConsecutif: 0
   combo: 1
+  sets: {fileID: 0}
   timerSeconds: 3
   scoreText: {fileID: 209983766}
   bestScoreText: {fileID: 644061906}
   comboText: {fileID: 747162092}
   healthBarImage: {fileID: 1272369525}
+  profils:
+  - {fileID: 11400000, guid: 23fc28c88c922704792c99578463f7c4, type: 2}
+  - {fileID: 11400000, guid: 9e46934d55ec7ef4ca1b4e58492d7b60, type: 2}
+  - {fileID: 11400000, guid: 915f68120f272f24596909e7ebf726f4, type: 2}
+  - {fileID: 11400000, guid: 83104c7c3b9ba234dae4662fce8827d3, type: 2}
   positionsAleatoires:
   - {fileID: 1292266208}
   - {fileID: 65927500}
