@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
 
     void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
         bestScore = obj.Leaderboard[0].StatValue;
-        bestScoreText.text = "Dernier score : " + obj.Leaderboard[0].StatValue;
+        bestScoreText.text = "Record : " + obj.Leaderboard[0].StatValue;
     }
 
     IEnumerator StartTimer()

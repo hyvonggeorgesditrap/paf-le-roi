@@ -521,6 +521,14 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -3068641252816787526, guid: 6697c304f967e1943b43022eed596b1a, type: 2}
+    - target: {fileID: 2134677882273613646, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: m_ShowToolkit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134677882273613646, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7798684868497201144, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
       propertyPath: m_RootOrder
       value: 2
