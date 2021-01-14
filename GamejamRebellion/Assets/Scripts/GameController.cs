@@ -69,14 +69,12 @@ public class GameController : MonoBehaviour
         updateAffichageHealth();
         afficherCombo();
         setupCam();
-       
+        Invoke("StartTimer", 3);
         
     }
     private void Awake()
     {
-         Pause();
-        Invoke("Play", 4);
-        StartTimer();
+         
     }
 
     void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
@@ -93,7 +91,9 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        while(timerSeconds > 0)
+        Pause();
+        Invoke("Play", 4);
+        while (timerSeconds > 0)
         {
             countdown.text = timerSeconds.ToString();
             yield return new WaitForSecondsRealtime(1);
