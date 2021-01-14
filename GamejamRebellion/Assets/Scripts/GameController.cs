@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour
     private AudioClip sonTirManque;
     [SerializeField]
     private AudioClip sonTirTouchee;
+    [SerializeField]
+    private AudioClip sonImpact;
     private PlayfabManager playfabManager = null;
 
     public void BeginGame()
@@ -143,6 +145,7 @@ public class GameController : MonoBehaviour
     }
 
     public void touchee(int poids) {
+        sourceEffets.PlayOneShot(sonImpact);
         AddScore(poids);
         AugmenterTemps();
     }
