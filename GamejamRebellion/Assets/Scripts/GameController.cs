@@ -46,14 +46,8 @@ public class GameController : MonoBehaviour
     private AudioClip sonImpact;
     private PlayfabManager playfabManager = null;
 
-    public void BeginGame()
+    private void Start()
     {
-        Debug.Log("Le jeu se lance");
-        //gamePlaying = true;
-
-    }
-
-    private void Start() {
         //Recuperer la session
         playfabManager = FindObjectOfType<PlayfabManager>();
         sets = FindObjectOfType<Settings>();
@@ -71,12 +65,7 @@ public class GameController : MonoBehaviour
         updateAffichageHealth();
         afficherCombo();
         setupCam();
-        Invoke("StartTimer", 3);
         
-    }
-    private void Awake()
-    {
-         
     }
 
     void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
@@ -93,14 +82,15 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartTimer()
     {
-        Pause();
-        Invoke("Play", 4);
         while (timerSeconds > 0)
         {
+            Debug.Log("seconde"+ timerSeconds);
             countdown.text = timerSeconds.ToString();
             yield return new WaitForSecondsRealtime(1);
             timerSeconds--;
         }
+        countdown.text = "";
+        gamePlaying = true;
     }
 
     void Update()
@@ -155,17 +145,19 @@ public class GameController : MonoBehaviour
     }
 
     public void addHealth(int damageAmout) {
-        if (damageAmout < 0) Missed();
-        health += damageAmout;
-        health = Mathf.Clamp(health, 0f, maxHealth);
-        updateAffichageHealth();
+        if (gamePlaying) {
+            if (damageAmout < 0) Missed();
+            health += damageAmout;
+            health = Mathf.Clamp(health, 0f, maxHealth);
+            updateAffichageHealth();
 
-        //Si mort
-        if (health <= 0) {
-            LevelLoader loader = FindObjectOfType<LevelLoader>();
-            playfabManager.isNewBest = (bestScore < score);
-            playfabManager.score = score;
-            loader.LoadFin();
+            //Si mort
+            if (health <= 0)  {
+                LevelLoader loader = FindObjectOfType<LevelLoader>();
+                playfabManager.isNewBest = (bestScore < score);
+                playfabManager.score = score;
+                loader.LoadFin();
+            }
         }
     }
 
