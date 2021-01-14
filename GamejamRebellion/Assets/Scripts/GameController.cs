@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI comboText;
     public Image healthBarImage;
     public List<PostProcessProfile> profils;
+    public TextMeshProUGUI countdown;
     private bool gamePlaying;
 
     [SerializeField]
@@ -68,7 +69,14 @@ public class GameController : MonoBehaviour
         updateAffichageHealth();
         afficherCombo();
         setupCam();
+       
         
+    }
+    private void Awake()
+    {
+         Pause();
+        Invoke("Play", 4);
+        StartTimer();
     }
 
     void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
@@ -87,7 +95,7 @@ public class GameController : MonoBehaviour
     {
         while(timerSeconds > 0)
         {
-            Debug.Log(timerSeconds);
+            countdown.text = timerSeconds.ToString();
             yield return new WaitForSecondsRealtime(1);
             timerSeconds--;
         }
