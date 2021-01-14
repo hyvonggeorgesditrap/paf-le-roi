@@ -2413,6 +2413,7 @@ MonoBehaviour:
   healthBarImage: {fileID: 828236918}
   musique: {fileID: 730127186}
   sonTirManque: {fileID: 8300000, guid: d6e3414106f1eb94aa8800c2bab223b7, type: 3}
+  sonTirTouchee: {fileID: 8300000, guid: 96f3ad1d3414e5a4bb3234e2a4c9f81d, type: 3}
 --- !u!4 &1911901838
 Transform:
   m_ObjectHideFlags: 0

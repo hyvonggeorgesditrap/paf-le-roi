@@ -42,7 +42,7 @@ public class Tir : MonoBehaviour
             {
                 if (objet.tag.Equals("Projectile")) {
                     Debug.Log("Tir sur un objet");
-
+                    gameController.Frappe();
                     rb = objet.GetComponent<Rigidbody>();
                     Vector3 targetPosition = new Vector3(target.position.x, target.position.y + hauteurCible, target.position.z);
                     Vector3 direction = targetPosition - objet.transform.position;

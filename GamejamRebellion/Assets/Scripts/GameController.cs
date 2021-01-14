@@ -31,6 +31,8 @@ public class GameController : MonoBehaviour
     private AudioSource musique;
     [SerializeField]
     private AudioClip sonTirManque;
+    [SerializeField]
+    private AudioClip sonTirTouchee;
     private PlayfabManager playfabManager = null;
 
     public void BeginGame()
@@ -84,6 +86,9 @@ public class GameController : MonoBehaviour
             afficherCombo();
             GererMusique();
         }
+    }
+    public void Frappe() {
+        musique.PlayOneShot(sonTirTouchee);
     }
 
     internal void Missed()
