@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 1032655801}
   - component: {fileID: 1032655800}
   - component: {fileID: 1032655799}
+  - component: {fileID: 1032655802}
   m_Layer: 5
   m_Name: Button-pause
   m_TagString: Untagged
@@ -1434,6 +1435,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032655797}
   m_CullTransparentMesh: 1
+--- !u!65 &1032655802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032655797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 43, y: 43, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1105169263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2178,7 +2192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668706995472737930, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
