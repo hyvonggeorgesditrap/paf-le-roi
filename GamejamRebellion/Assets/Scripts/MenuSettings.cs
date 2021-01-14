@@ -25,7 +25,15 @@ public class MenuSettings : MonoBehaviour
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI effectsText;
 
+    [SerializeField]
+    private AudioSource sourceEffets;
+    [SerializeField]
+    private AudioClip sonTirManque;
+    private float EffectCooldown = (float)0.5;
+    private float NextEffect = 0;
+
     public void SetEffectsVolume(float value) {
+        
         float linearTodB = 20.0f * Mathf.Log10(value / 100);
         if (value != 0)
            mainMixer.SetFloat("effectsVolume", linearTodB);
@@ -35,6 +43,12 @@ public class MenuSettings : MonoBehaviour
         //int textValue = (int)(value * 100 / 80 + 100);
         settings.volumeEffects = value;
         effectsText.text = value.ToString() + "%";
+
+        //Jouer un son a titre d'indicateur
+        if (Time.time > NextEffect) {
+            NextEffect = Time.time + EffectCooldown;
+            sourceEffets.PlayOneShot(sonTirManque);
+        }
     }
 
     public void SetMusicVolume(float value) {
