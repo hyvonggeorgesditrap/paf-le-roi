@@ -14,16 +14,26 @@ public class Settings : MonoBehaviour
 
     public void SetEffectsVolume(float value)
     {
-        mainMixer.SetFloat("effectsVolume", value);
-        int textValue = (int)(value*100/80 + 100);
-        effectsText.text = textValue.ToString() + "%";
+        float linearTodB = 20.0f * Mathf.Log10(value / 100);
+        if (value != 0)
+            mainMixer.SetFloat("effectsVolume", linearTodB);
+        else
+            mainMixer.SetFloat("effectsVolume", -80.0f);
+
+        //int textValue = (int)(value * 100 / 80 + 100);
+        effectsText.text = value.ToString() + "%";
     }
 
     public void SetMusicVolume(float value)
     {
-        mainMixer.SetFloat("musicVolume", value);
-        int textValue = (int)(value * 100 / 80 + 100);
-        musicText.text = textValue.ToString() + "%";
+        float linearTodB = 20.0f * Mathf.Log10(value / 100);
+        if (value != 0)
+            mainMixer.SetFloat("musicVolume", linearTodB);
+        else
+            mainMixer.SetFloat("musicVolume", -80.0f);
+
+        //int textValue = (int)(value * 100 / 80 + 100);
+        musicText.text = value.ToString() + "%";
     }
 
     /*public void SetColorblindness(int index)
