@@ -178,6 +178,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: ListObjets.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: ListObjets.Array.data[0]
+      value: 
+      objectReference: {fileID: 6108042097561078281, guid: 984829427d64ced4c8dc2d8acd42090e, type: 3}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: ListObjets.Array.data[1]
+      value: 
+      objectReference: {fileID: 7761437721221582896, guid: 2d89b80a1aac9a649a4aaec19ff63afe, type: 3}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: ListObjets.Array.data[2]
+      value: 
+      objectReference: {fileID: 2148201634529585197, guid: 698d45978a1ba454fb0248db158ea9db, type: 3}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: ListObjets.Array.data[3]
+      value: 
+      objectReference: {fileID: 851876086494781785, guid: a137378ceefb140449f736fb02d89fd1, type: 3}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: ListObjets.Array.data[4]
+      value: 
+      objectReference: {fileID: 5390381073963417800, guid: 2a98f9133a2805d468f5bb93f3a2fb6b, type: 3}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: ListObjets.Array.data[5]
+      value: 
+      objectReference: {fileID: 8249944121244036568, guid: 3eb966badbee25745874254087372cd5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
 --- !u!1001 &164966285
@@ -260,7 +288,7 @@ GameObject:
   - component: {fileID: 226920930}
   - component: {fileID: 226920929}
   - component: {fileID: 226920928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,6 +908,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 722779682}
   m_CullTransparentMesh: 1
+--- !u!82 &730127186 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -6157879495319714134, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+  m_PrefabInstance: {fileID: 132106721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &756674701
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +2055,7 @@ MonoBehaviour:
   target: {fileID: 4242519370449491206, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
   force: 200
   poids: 5
-  hauteurCible: 24
+  hauteurCible: 25
   gameController: {fileID: 0}
   cursor: {fileID: 2800000, guid: dd2882e799f9b5b458a8662a9eba1c85, type: 3}
 --- !u!114 &1911901837
@@ -2048,7 +2081,7 @@ MonoBehaviour:
   bestScoreText: {fileID: 2051645535}
   comboText: {fileID: 756674703}
   healthBarImage: {fileID: 828236918}
-  musique: {fileID: 0}
+  musique: {fileID: 730127186}
 --- !u!4 &1911901838
 Transform:
   m_ObjectHideFlags: 0
