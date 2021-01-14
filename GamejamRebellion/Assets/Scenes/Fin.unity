@@ -1309,7 +1309,6 @@ GameObject:
   m_Component:
   - component: {fileID: 673913336}
   - component: {fileID: 673913337}
-  - component: {fileID: 673913338}
   m_Layer: 0
   m_Name: menu-fin-2
   m_TagString: Untagged
@@ -1355,34 +1354,6 @@ MonoBehaviour:
   - {fileID: 1930612351}
   labelScorenNormal: {fileID: 1457412697}
   nomInput: {fileID: 876198626}
---- !u!114 &673913338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673913335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0b7ed1b27c264448a53fe8853192952, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  settings: {fileID: 0}
-  sliderMusique: {fileID: 0}
-  sliderEffets: {fileID: 0}
-  toggleDaltonisme: {fileID: 0}
-  daltonismeDrop: {fileID: 0}
-  daltonismeLabel: {fileID: 0}
-  ObjetBackgroundImage: {fileID: 0}
-  listeBackgrounds:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  musicText: {fileID: 0}
-  effectsText: {fileID: 0}
-  sourceEffets: {fileID: 0}
-  sonTirManque: {fileID: 0}
 --- !u!1 &693296338
 GameObject:
   m_ObjectHideFlags: 0
