@@ -7,6 +7,7 @@ TagManager:
   - Object
   - Projectile
   - Vide
+  - Statue
   layers:
   - Default
   - TransparentFX

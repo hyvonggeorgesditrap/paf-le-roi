@@ -51,10 +51,10 @@ public class Projectile : MonoBehaviour
     }
 
         private void OnCollisionEnter(Collision collision) {
-        if (statue != null && gameController != null && statue.GetInstanceID() == collision.gameObject.GetInstanceID()) {
+        if (statue != null && gameController != null && collision.gameObject.tag == "Statue") {
             Debug.Log("Le projectile "+gameObject.name+" est entrer en collision avec la statue!");
-            gameController.touchee(poids);
             Destroy(gameObject);
+            gameController.touchee(poids);
         } 
     }
 }

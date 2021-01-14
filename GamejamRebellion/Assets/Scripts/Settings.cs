@@ -6,10 +6,14 @@ using TMPro;
 
 public class Settings : MonoBehaviour
 {
+    //Settings par default (au lancement)
+
     public float volumeMusique = 100;
     public float volumeEffects = 100;
 
-
+    public bool toggleDaltonisme;
+    public string daltonisme = "Protanopia";
+    public int daltonismeId = 0;
     /*public void SetColorblindness(int index)
     {
         switch(index)
