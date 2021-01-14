@@ -61,7 +61,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8294727151899950351
 MonoBehaviour:
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0b13de75ce00b5d4a86e471be7142bdf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2afe7002d43b5f44fbfcac838bb2731a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -406,4 +406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 4763878779103437075}
   playButton: {fileID: 0}
+  daltonismeLabel: {fileID: 0}
   transitionTime: 1
+  toggle: {fileID: 0}

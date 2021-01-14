@@ -6753,22 +6753,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 542821522068753714, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4117850408647562801, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2afe7002d43b5f44fbfcac838bb2731a, type: 3}
-    - target: {fileID: 5291471773202903112, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6668706995111272435, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6668706995472737928, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
       propertyPath: playButton
       value: 
@@ -6824,10 +6808,6 @@ PrefabInstance:
     - target: {fileID: 6668706995472737930, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
       propertyPath: m_Name
       value: LevelLoader
-      objectReference: {fileID: 0}
-    - target: {fileID: 6668706995472737930, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
