@@ -10,11 +10,22 @@ public class Projectile : MonoBehaviour
     private GameObject statue = null;
     private GameController gameController = null;
 
+    Vector3 torque;
+
     // Start is called before the first frame update
     void Start() {
         statue = FindObjectOfType<Statue>().gameObject;
         gameController = FindObjectOfType<GameController>();
         trail = gameObject.GetComponentInChildren<TrailRenderer>();
+        Spin();
+    }
+
+    void Spin() {
+        Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+        torque.x = Random.Range(-200, 200);
+        torque.y = Random.Range(-200, 200);
+        torque.z = Random.Range(-200, 200);
+        rb.AddTorque(torque);
     }
 
     // Update is called once per frame

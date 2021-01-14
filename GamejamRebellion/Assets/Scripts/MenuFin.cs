@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PlayFab.ClientModels;
 using TMPro;
 
 public class MenuFin : MonoBehaviour
@@ -11,6 +12,8 @@ public class MenuFin : MonoBehaviour
     private GameObject scoreMeilleur;
     [SerializeField]
     private TextMeshProUGUI[] scoresUI = new TextMeshProUGUI[2];
+    [SerializeField]
+    private TextMeshProUGUI labelScorenNormal;
 
     [SerializeField]
     private TMP_InputField nomInput;
@@ -27,8 +30,13 @@ public class MenuFin : MonoBehaviour
         if (manager.isNewBest) {
             scoreMeilleur.SetActive(true);
         } else {
+            manager.GetPersonalLeaderBoard(afficherPseudoLabel);
             scorenNormal.SetActive(true);
         }
+    }
+
+    private void afficherPseudoLabel(GetLeaderboardAroundPlayerResult obj) {
+        labelScorenNormal.text = "Bravo "+obj.Leaderboard[0].DisplayName+"!";
     }
 
     public void envoyerScore() {

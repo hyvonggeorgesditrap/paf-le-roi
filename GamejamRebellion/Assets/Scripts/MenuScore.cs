@@ -34,8 +34,14 @@ public class MenuScore : MonoBehaviour
     }
 
     private void modifierDernnierScore(GetLeaderboardAroundPlayerResult obj) {
-        ListeNom[3].text = obj.Leaderboard[0].DisplayName;
-        ListeScore[3].text = " : "+ obj.Leaderboard[0].StatValue;
+        if (obj.Leaderboard[0].StatValue == 0) {
+            ListeNom[3].text = "";
+            ListeScore[3].text = "-";
+        }
+        else {
+            ListeNom[3].text = obj.Leaderboard[0].DisplayName;
+            ListeScore[3].text = " : " + obj.Leaderboard[0].StatValue;
+        }
     }
 
     private void modifierMeilleurScores(GetLeaderboardResult obj)
