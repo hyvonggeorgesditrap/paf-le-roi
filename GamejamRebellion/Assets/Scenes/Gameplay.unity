@@ -3712,6 +3712,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 6668706995472737930, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
 --- !u!1001 &1824244650
@@ -3943,6 +3947,7 @@ MonoBehaviour:
   sourceEffets: {fileID: 132106723}
   sonTirManque: {fileID: 8300000, guid: d6e3414106f1eb94aa8800c2bab223b7, type: 3}
   sonTirTouchee: {fileID: 8300000, guid: 96f3ad1d3414e5a4bb3234e2a4c9f81d, type: 3}
+  sonImpact: {fileID: 8300000, guid: 2b5f079e760de994baecc835ad692858, type: 3}
 --- !u!4 &1911901838
 Transform:
   m_ObjectHideFlags: 0
