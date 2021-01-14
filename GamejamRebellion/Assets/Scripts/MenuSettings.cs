@@ -19,6 +19,10 @@ public class MenuSettings : MonoBehaviour
     private Dropdown daltonismeDrop;
     [SerializeField]
     private Text daltonismeLabel;
+    [SerializeField]
+    private Image ObjetBackgroundImage;
+    [SerializeField]
+    private Sprite[] listeBackgrounds = new Sprite[4];
 
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI effectsText;
@@ -49,6 +53,12 @@ public class MenuSettings : MonoBehaviour
     public void toggleChange() {
         Debug.Log("toggle change trouvee : " + toggleDaltonisme.isOn);
         settings.toggleDaltonisme = toggleDaltonisme.isOn;
+        if (!toggleDaltonisme.isOn) {
+            ObjetBackgroundImage.sprite = listeBackgrounds[0];
+        }
+        else {
+            ObjetBackgroundImage.sprite = listeBackgrounds[settings.daltonismeId + 1];
+        }
     }
 
     public void typeDaltonismeChanged() {
@@ -56,6 +66,7 @@ public class MenuSettings : MonoBehaviour
         string name = daltonismeLabel.text;
         settings.daltonisme = name;
         settings.daltonismeId = getDaltonismeId(name);
+        ObjetBackgroundImage.sprite = listeBackgrounds[settings.daltonismeId + 1];
     }
 
     int getDaltonismeId(string name) {

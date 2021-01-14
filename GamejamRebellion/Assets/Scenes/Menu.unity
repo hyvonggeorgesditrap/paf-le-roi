@@ -2580,6 +2580,12 @@ MonoBehaviour:
   toggleDaltonisme: {fileID: 646351622}
   daltonismeDrop: {fileID: 417750533}
   daltonismeLabel: {fileID: 206637441}
+  ObjetBackgroundImage: {fileID: 1370242450}
+  listeBackgrounds:
+  - {fileID: 21300000, guid: 7de5a5239cc1ccf48b246d953cb824d3, type: 3}
+  - {fileID: 21300000, guid: 768d5b25694959b4ea98f40091f5c42b, type: 3}
+  - {fileID: 21300000, guid: 9438b9e0815f3974294b4a8c0c892ed3, type: 3}
+  - {fileID: 21300000, guid: 8306c7fe80ea1164db5f9fbfa0cd2013, type: 3}
   musicText: {fileID: 1719005063}
   effectsText: {fileID: 13799846}
   sourceEffets: {fileID: 963194230}
