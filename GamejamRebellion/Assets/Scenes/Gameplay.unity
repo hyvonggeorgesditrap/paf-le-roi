@@ -713,6 +713,18 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: maxVecteur
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: minVecteur
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: vitesseSpawn
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114687610745649648, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
       propertyPath: ListObjets.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -3761,7 +3773,7 @@ MonoBehaviour:
   force: 200
   poids: 5
   hauteurCible: 25
-  gameController: {fileID: 0}
+  gameController: {fileID: 1911901837}
   cursor: {fileID: 2800000, guid: dd2882e799f9b5b458a8662a9eba1c85, type: 3}
 --- !u!114 &1911901837
 MonoBehaviour:
@@ -4124,30 +4136,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1138691624, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 88dabcbf81c23c944bc7f8212f00bbc3, type: 2}
-    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
-      propertyPath: m_Height
-      value: 0.1101736
-      objectReference: {fileID: 0}
-    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
-      propertyPath: m_Radius
-      value: 0.015619213
-      objectReference: {fileID: 0}
-    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
-      propertyPath: m_Center.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3579134988738318268, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
       propertyPath: m_Name
       value: statue
