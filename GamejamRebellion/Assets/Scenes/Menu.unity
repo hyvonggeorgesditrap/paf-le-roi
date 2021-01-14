@@ -3919,6 +3919,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1075158914}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: setDaltonisme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1305278276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6493,6 +6505,10 @@ PrefabInstance:
       propertyPath: playButton
       value: 
       objectReference: {fileID: 182167097}
+    - target: {fileID: 6668706995472737928, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
+      propertyPath: daltonismeLabel
+      value: 
+      objectReference: {fileID: 206637441}
     - target: {fileID: 6668706995472737929, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
       propertyPath: m_RootOrder
       value: 3

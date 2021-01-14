@@ -26,7 +26,7 @@ public class Settings : MonoBehaviour
         musicText.text = textValue.ToString() + "%";
     }
 
-    public void SetColorblindness(int index)
+    /*public void SetColorblindness(int index)
     {
         switch(index)
         {
@@ -43,5 +43,5 @@ public class Settings : MonoBehaviour
                 break;
         }
         
-    }
+    }*/
 }
