@@ -123,6 +123,7 @@ public class GameController : MonoBehaviour
     }
 
     public void addHealth(int damageAmout) {
+        if (damageAmout < 0) Missed();
         health += damageAmout;
         health = Mathf.Clamp(health, 0f, maxHealth);
         updateAffichageHealth();

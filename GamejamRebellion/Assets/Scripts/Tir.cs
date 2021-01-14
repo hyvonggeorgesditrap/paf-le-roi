@@ -54,7 +54,6 @@ public class Tir : MonoBehaviour
                 {
                     Debug.Log("Tir Dans le Vide!");
                     gameController.addHealth(0 - poids);
-                    gameController.Missed();
                     gameController.ResetCombo();
                 }
                 NextHit = Time.time + HitCooldown;
