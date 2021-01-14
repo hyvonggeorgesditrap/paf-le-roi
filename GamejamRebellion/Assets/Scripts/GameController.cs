@@ -35,6 +35,9 @@ public class GameController : MonoBehaviour
     private GameObject pancarte;
 
     [SerializeField]
+    private List<Animator> animatorVillageois;
+
+    [SerializeField]
     private AudioSource sourceMusique;
     [SerializeField]
     private AudioSource sourceEffets;
@@ -109,6 +112,11 @@ public class GameController : MonoBehaviour
         }
     }
     public void Frappe() {
+        for(int i = 0; i < animatorVillageois.Count; i++)
+        {
+            animatorVillageois[i].SetTrigger("statueTouchee");
+        }
+
         sourceEffets.PlayOneShot(sonTirTouchee);
     }
 

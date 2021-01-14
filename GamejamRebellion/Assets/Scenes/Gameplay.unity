@@ -4040,6 +4040,22 @@ MonoBehaviour:
   - {fileID: 1436001471}
   - {fileID: 642850999}
   pancarte: {fileID: 1697849247325885149, guid: e002411731755e94b99eaa127a21ac4a, type: 3}
+  animatorVillageois:
+  - {fileID: 1735906701}
+  - {fileID: 5379603836796652480}
+  - {fileID: 306906835}
+  - {fileID: 821384738656676879}
+  - {fileID: 1913281870}
+  - {fileID: 1903891435}
+  - {fileID: 1506104417085171760}
+  - {fileID: 2122480580}
+  - {fileID: 1506104415783674076}
+  - {fileID: 2045353704}
+  - {fileID: 1105169267}
+  - {fileID: 665006932}
+  - {fileID: 202721798}
+  - {fileID: 1596457053}
+  - {fileID: 503068052}
   sourceMusique: {fileID: 730127186}
   sourceEffets: {fileID: 132106723}
   sonTirManque: {fileID: 8300000, guid: d6e3414106f1eb94aa8800c2bab223b7, type: 3}
