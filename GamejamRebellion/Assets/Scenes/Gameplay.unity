@@ -382,6 +382,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6157879495319714134, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3068641252816787526, guid: 6697c304f967e1943b43022eed596b1a, type: 2}
     - target: {fileID: 7798684868497201144, guid: 062845f0f06bf564fb9746f904ac6f87, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2282,7 +2286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668706995472737930, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
@@ -2721,6 +2725,26 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 88dabcbf81c23c944bc7f8212f00bbc3, type: 2}
+    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
+      propertyPath: m_Height
+      value: 0.1101736
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
+      propertyPath: m_Radius
+      value: 0.015619213
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
+      propertyPath: m_Center.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249329564, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3579134988738318268, guid: 489956bbd4b5c3149aed955bda72cd0f, type: 3}
       propertyPath: m_Name
       value: statue
