@@ -723,6 +723,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeMusique: 100
   volumeEffects: 100
+  toggleDaltonisme: 0
+  daltonisme: Protanopia
+  daltonismeId: 0
 --- !u!1 &361017999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1361,10 +1364,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: SetColorblindness
-        m_Mode: 0
+      - m_Target: {fileID: 917220788}
+        m_TargetAssemblyTypeName: MenuSettings, Assembly-CSharp
+        m_MethodName: typeDaltonismeChanged
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2167,6 +2170,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 917220788}
+        m_TargetAssemblyTypeName: MenuSettings, Assembly-CSharp
+        m_MethodName: toggleChange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &668984636
 GameObject:
@@ -2561,6 +2576,9 @@ MonoBehaviour:
   settings: {fileID: 0}
   sliderMusique: {fileID: 1588796920}
   sliderEffets: {fileID: 366647441}
+  toggleDaltonisme: {fileID: 646351622}
+  daltonismeDrop: {fileID: 417750533}
+  daltonismeLabel: {fileID: 206637441}
   mainMixer: {fileID: 24100000, guid: 6697c304f967e1943b43022eed596b1a, type: 2}
   musicText: {fileID: 1719005063}
   effectsText: {fileID: 13799846}

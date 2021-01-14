@@ -13,16 +13,17 @@ public class MenuSettings : MonoBehaviour
     private Slider sliderMusique;
     [SerializeField]
     private Slider sliderEffets;
+    [SerializeField]
+    private Toggle toggleDaltonisme;
+    [SerializeField]
+    private Dropdown daltonismeDrop;
+    [SerializeField]
+    private Text daltonismeLabel;
 
     public AudioMixer mainMixer;
 
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI effectsText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void SetEffectsVolume(float value) {
         float linearTodB = 20.0f * Mathf.Log10(value / 100);
@@ -48,6 +49,28 @@ public class MenuSettings : MonoBehaviour
         musicText.text = value.ToString() + "%";
     }
 
+    public void toggleChange() {
+        Debug.Log("toggle change trouvee : " + toggleDaltonisme.isOn);
+        settings.toggleDaltonisme = toggleDaltonisme.isOn;
+    }
+
+    public void typeDaltonismeChanged() {
+        Debug.Log("type de dalto : " + daltonismeLabel.text);
+        string name = daltonismeLabel.text;
+        settings.daltonisme = name;
+        settings.daltonismeId = getDaltonismeId(name);
+    }
+
+    int getDaltonismeId(string name) {
+        if (string.IsNullOrEmpty(name) == true) { return -1; }
+        List<Dropdown.OptionData> list = daltonismeDrop.options;
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (list[i].text.Equals(name)) { return i; }
+        }
+        return -1;
+    }
+
     public void afficher() {
         if (settings == null)
             settings = FindObjectOfType<Settings>();
@@ -57,5 +80,9 @@ public class MenuSettings : MonoBehaviour
 
         Debug.Log("volume effects trouvee : " + settings.volumeEffects);
         sliderEffets.value = settings.volumeEffects;
+
+        toggleDaltonisme.isOn = settings.toggleDaltonisme;
+        Debug.Log("load toggle : " + settings.toggleDaltonisme);
+        daltonismeDrop.value = settings.daltonismeId;
     }
 }
