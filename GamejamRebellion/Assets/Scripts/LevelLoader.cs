@@ -14,8 +14,14 @@ public class LevelLoader : MonoBehaviour
     void Update()
     {}
 
-    public void LoadNextLevel() {
+    public void LoadNextLevel() 
+    {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    public void LoadPreviousLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
     }
 
     IEnumerator LoadLevel(int levelIndex)

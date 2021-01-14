@@ -769,6 +769,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416150887}
   m_CullTransparentMesh: 1
+--- !u!114 &494925993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6668706995472737928, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
+  m_PrefabInstance: {fileID: 557104595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0908b9e38c75e94bb278ac958d3e848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &557104595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2565,9 +2576,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 494925993}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: LoadNextLevel
+        m_MethodName: LoadPreviousLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
