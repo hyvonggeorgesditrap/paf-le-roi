@@ -11,25 +11,32 @@ public class Settings : MonoBehaviour
     public float volumeMusique = 100;
     public float volumeEffects = 100;
 
+    public AudioMixer mainMixer;
+
     public bool toggleDaltonisme;
     public string daltonisme = "Protanopia";
     public int daltonismeId = 0;
-    /*public void SetColorblindness(int index)
-    {
-        switch(index)
-        {
-            case 0:
-                Debug.Log("Protanopia");
-                break;
-            case 1:
-                Debug.Log("Deuteranopia");
-                break;
-            case 2:
-                Debug.Log("Trinatopia");
-                break;
-            default:
-                break;
-        }
-        
-    }*/
+
+    private void Start() {
+        SetEffectsVolume(volumeEffects); 
+        SetMusicVolume(volumeMusique);
+    }
+
+    public void SetEffectsVolume(float value) {
+        volumeEffects = value;
+        float linearTodB = 20.0f * Mathf.Log10(value / 100);
+        if (value != 0)
+            mainMixer.SetFloat("effectsVolume", linearTodB);
+        else
+            mainMixer.SetFloat("effectsVolume", -80.0f);
+    }
+
+    public void SetMusicVolume(float value) {
+        volumeMusique = value;
+        float linearTodB = 20.0f * Mathf.Log10(value / 100);
+        if (value != 0)
+            mainMixer.SetFloat("musicVolume", linearTodB);
+        else
+            mainMixer.SetFloat("musicVolume", -80.0f);
+    } 
 }

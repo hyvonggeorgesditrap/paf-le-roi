@@ -20,8 +20,6 @@ public class MenuSettings : MonoBehaviour
     [SerializeField]
     private Text daltonismeLabel;
 
-    public AudioMixer mainMixer;
-
     public TextMeshProUGUI musicText;
     public TextMeshProUGUI effectsText;
 
@@ -33,15 +31,7 @@ public class MenuSettings : MonoBehaviour
     private float NextEffect = 0;
 
     public void SetEffectsVolume(float value) {
-        
-        float linearTodB = 20.0f * Mathf.Log10(value / 100);
-        if (value != 0)
-           mainMixer.SetFloat("effectsVolume", linearTodB);
-        else
-           mainMixer.SetFloat("effectsVolume", -80.0f);
-
-        //int textValue = (int)(value * 100 / 80 + 100);
-        settings.volumeEffects = value;
+        settings.SetEffectsVolume(value);
         effectsText.text = value.ToString() + "%";
 
         //Jouer un son a titre d'indicateur
@@ -52,14 +42,7 @@ public class MenuSettings : MonoBehaviour
     }
 
     public void SetMusicVolume(float value) {
-        float linearTodB = 20.0f * Mathf.Log10(value / 100);
-        if (value != 0)
-            mainMixer.SetFloat("musicVolume", linearTodB);
-        else
-            mainMixer.SetFloat("musicVolume", -80.0f);
-
-        //int textValue = (int)(value * 100 / 80 + 100);
-        settings.volumeMusique = value;
+        settings.SetMusicVolume(value);
         musicText.text = value.ToString() + "%";
     }
 

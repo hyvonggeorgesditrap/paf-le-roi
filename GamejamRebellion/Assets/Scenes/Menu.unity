@@ -721,8 +721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc273fe3c143f6b44bf295529f356754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeMusique: 100
+  volumeMusique: 50
   volumeEffects: 100
+  mainMixer: {fileID: 24100000, guid: 6697c304f967e1943b43022eed596b1a, type: 2}
   toggleDaltonisme: 0
   daltonisme: Protanopia
   daltonismeId: 0
@@ -2579,7 +2580,6 @@ MonoBehaviour:
   toggleDaltonisme: {fileID: 646351622}
   daltonismeDrop: {fileID: 417750533}
   daltonismeLabel: {fileID: 206637441}
-  mainMixer: {fileID: 24100000, guid: 6697c304f967e1943b43022eed596b1a, type: 2}
   musicText: {fileID: 1719005063}
   effectsText: {fileID: 13799846}
   sourceEffets: {fileID: 963194230}
