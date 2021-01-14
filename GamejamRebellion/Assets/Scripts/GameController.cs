@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using PlayFab.ClientModels;
 using TMPro;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class GameController : MonoBehaviour
 
     [SerializeField]
     private AudioSource musique;
+    [SerializeField]
+    private AudioClip sonTirManque;
     private PlayfabManager playfabManager = null;
 
     public void BeginGame()
@@ -76,6 +79,11 @@ public class GameController : MonoBehaviour
             afficherCombo();
             GererMusique();
         }
+    }
+
+    internal void Missed()
+    {
+        musique.PlayOneShot(sonTirManque);
     }
 
     void afficherCombo() { comboText.text = "Combo X" + combo; }

@@ -2293,6 +2293,7 @@ MonoBehaviour:
   comboText: {fileID: 756674703}
   healthBarImage: {fileID: 828236918}
   musique: {fileID: 730127186}
+  sonTirManque: {fileID: 8300000, guid: d6e3414106f1eb94aa8800c2bab223b7, type: 3}
 --- !u!4 &1911901838
 Transform:
   m_ObjectHideFlags: 0
