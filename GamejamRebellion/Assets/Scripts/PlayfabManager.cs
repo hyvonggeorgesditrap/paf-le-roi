@@ -7,6 +7,8 @@ using System;
 
 public class PlayfabManager : MonoBehaviour
 {
+    public bool isNewBest = false;
+    public int score = 0;
     // Start is called before the first frame update
     void Awake() {
         DontDestroyOnLoad(gameObject);
@@ -25,7 +27,7 @@ public class PlayfabManager : MonoBehaviour
         PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
     }
 
-    public void envoyerScore(int score, string nom)
+    public void envoyerScore(string nom)
     {
         setName(nom);
         SendLeaderboard(score);
@@ -75,14 +77,6 @@ public class PlayfabManager : MonoBehaviour
         };
         PlayFabClientAPI.GetLeaderboardAroundPlayer(request, callback, OnError);
     }
-
-    int OnPersonalLeaderboardGet(GetLeaderboardAroundPlayerResult obj)
-    {
-        Debug.Log("Got personal leaderboard!");
-        var dernierScore = obj.Leaderboard[0];
-        return dernierScore.StatValue;
-    }
-
 
     void OnNameUpdated(UpdateUserTitleDisplayNameResult obj)
     {

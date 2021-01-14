@@ -46,12 +46,17 @@ public class GameController : MonoBehaviour
         //Afficher le dernier score
         playfabManager.GetPersonalLeaderBoard(afficherDernierScore);
 
+        //set valeur de verification de nouveau meilleur score a faux par defaut
+        playfabManager.isNewBest = false;
+        playfabManager.score = 0;
+
         StartCoroutine(StartTimer());
         updateAffichageHealth();
         afficherCombo();
     }
 
     void afficherDernierScore(GetLeaderboardAroundPlayerResult obj) {
+        bestScore = obj.Leaderboard[0].StatValue;
         bestScoreText.text = "Dernier score : " + obj.Leaderboard[0].StatValue;
     }
 
@@ -120,6 +125,8 @@ public class GameController : MonoBehaviour
         //Si mort
         if (health <= 0) {
             LevelLoader loader = FindObjectOfType<LevelLoader>();
+            playfabManager.isNewBest = (bestScore < score);
+            playfabManager.score = score;
             loader.LoadFin();
         }
     }
