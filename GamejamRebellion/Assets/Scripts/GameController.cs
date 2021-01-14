@@ -108,6 +108,12 @@ public class GameController : MonoBehaviour
         health += damageAmout;
         health = Mathf.Clamp(health, 0f, maxHealth);
         updateAffichageHealth();
+
+        //Si mort
+        if (health <= 0) {
+            LevelLoader loader = FindObjectOfType<LevelLoader>();
+            loader.LoadNextLevel();
+        }
     }
 
     void updateAffichageHealth() {
