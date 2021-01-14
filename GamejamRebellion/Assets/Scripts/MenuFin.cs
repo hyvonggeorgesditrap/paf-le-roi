@@ -22,6 +22,7 @@ public class MenuFin : MonoBehaviour
     // Start is called before the first frame update
     void Start()  {
         manager = FindObjectOfType<PlayfabManager>();
+        GetComponent<MenuSettings>().afficher();
 
         foreach (TextMeshProUGUI scoreUI in scoresUI) {
             scoreUI.text = manager.score.ToString();

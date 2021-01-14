@@ -953,7 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeMusique: 5
-  volumeEffects: 100
+  volumeEffects: 20
   mainMixer: {fileID: 24100000, guid: 6697c304f967e1943b43022eed596b1a, type: 2}
   toggleDaltonisme: 0
   daltonisme: Protanopia
