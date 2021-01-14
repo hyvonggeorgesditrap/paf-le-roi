@@ -28,7 +28,9 @@ public class GameController : MonoBehaviour
     private bool gamePlaying;
 
     [SerializeField]
-    private AudioSource musique;
+    private AudioSource sourceMusique;
+    [SerializeField]
+    private AudioSource sourceEffets;
     [SerializeField]
     private AudioClip sonTirManque;
     [SerializeField]
@@ -88,12 +90,12 @@ public class GameController : MonoBehaviour
         }
     }
     public void Frappe() {
-        musique.PlayOneShot(sonTirTouchee);
+        sourceEffets.PlayOneShot(sonTirTouchee);
     }
 
     internal void Missed()
     {
-        musique.PlayOneShot(sonTirManque);
+        sourceEffets.PlayOneShot(sonTirManque);
     }
 
     void afficherCombo() { comboText.text = "Combo X" + combo; }
@@ -155,10 +157,12 @@ public class GameController : MonoBehaviour
 
     public void GererMusique() {
         if (combo == 1)  {
-            musique.pitch = (float)1.0;
+            sourceMusique.pitch = (float)1.0;
+            sourceEffets.pitch = (float)1.0;
         }
         else {
-            musique.pitch = float.Parse("1." + combo);
+            sourceMusique.pitch = float.Parse("1." + combo);
+            sourceEffets.pitch = float.Parse("1." + combo);
         }
     }
 
