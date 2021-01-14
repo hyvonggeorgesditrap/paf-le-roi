@@ -721,7 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc273fe3c143f6b44bf295529f356754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeMusique: 50
+  volumeMusique: 5
   volumeEffects: 100
   mainMixer: {fileID: 24100000, guid: 6697c304f967e1943b43022eed596b1a, type: 2}
   toggleDaltonisme: 0
