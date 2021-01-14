@@ -134,9 +134,6 @@ GameObject:
   - component: {fileID: 10651914}
   - component: {fileID: 10651919}
   - component: {fileID: 10651918}
-  - component: {fileID: 10651917}
-  - component: {fileID: 10651916}
-  - component: {fileID: 10651915}
   m_Layer: 3
   m_Name: tonneau (1)
   m_TagString: Projectile
@@ -158,50 +155,6 @@ Transform:
   m_Father: {fileID: 1251195332}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 59.387, y: -151.632, z: -187.544}
---- !u!136 &10651915
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10651913}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.1
-  m_Height: 4.704354
-  m_Direction: 1
-  m_Center: {x: -0.00000047683716, y: 2.2, z: 0}
---- !u!114 &10651916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10651913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 10
-  trail: {fileID: 0}
---- !u!54 &10651917
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10651913}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!23 &10651918
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -901,9 +854,6 @@ GameObject:
   - component: {fileID: 150023435}
   - component: {fileID: 150023440}
   - component: {fileID: 150023439}
-  - component: {fileID: 150023438}
-  - component: {fileID: 150023437}
-  - component: {fileID: 150023436}
   m_Layer: 3
   m_Name: tonneau (2)
   m_TagString: Projectile
@@ -925,50 +875,6 @@ Transform:
   m_Father: {fileID: 1251195332}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 59.387, y: -151.632, z: -187.544}
---- !u!136 &150023436
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150023434}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.1
-  m_Height: 4.704354
-  m_Direction: 1
-  m_Center: {x: -0.00000047683716, y: 2.2, z: 0}
---- !u!114 &150023437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150023434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 10
-  trail: {fileID: 0}
---- !u!54 &150023438
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 150023434}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!23 &150023439
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2226,9 +2132,6 @@ GameObject:
   - component: {fileID: 714653152}
   - component: {fileID: 714653151}
   - component: {fileID: 714653150}
-  - component: {fileID: 714653149}
-  - component: {fileID: 714653148}
-  - component: {fileID: 714653147}
   m_Layer: 3
   m_Name: fourche (3)
   m_TagString: Projectile
@@ -2236,50 +2139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &714653147
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714653146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 8.422953
-  m_Direction: 1
-  m_Center: {x: 0, y: 4.2114763, z: 0.19942072}
---- !u!114 &714653148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714653146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 20
-  trail: {fileID: 0}
---- !u!54 &714653149
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 714653146}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!65 &714653150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2680,9 +2539,6 @@ GameObject:
   - component: {fileID: 1172582859}
   - component: {fileID: 1172582858}
   - component: {fileID: 1172582857}
-  - component: {fileID: 1172582856}
-  - component: {fileID: 1172582855}
-  - component: {fileID: 1172582854}
   m_Layer: 3
   m_Name: fourche (2)
   m_TagString: Projectile
@@ -2690,50 +2546,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1172582854
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172582853}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 8.422953
-  m_Direction: 1
-  m_Center: {x: 0, y: 4.2114763, z: 0.19942072}
---- !u!114 &1172582855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172582853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 20
-  trail: {fileID: 0}
---- !u!54 &1172582856
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172582853}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!65 &1172582857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3041,9 +2853,6 @@ GameObject:
   - component: {fileID: 1275898309}
   - component: {fileID: 1275898308}
   - component: {fileID: 1275898307}
-  - component: {fileID: 1275898306}
-  - component: {fileID: 1275898305}
-  - component: {fileID: 1275898304}
   m_Layer: 3
   m_Name: fourche (1)
   m_TagString: Projectile
@@ -3051,50 +2860,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1275898304
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275898303}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 8.422953
-  m_Direction: 1
-  m_Center: {x: 0, y: 4.2114763, z: 0.19942072}
---- !u!114 &1275898305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275898303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 20
-  trail: {fileID: 0}
---- !u!54 &1275898306
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275898303}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!65 &1275898307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3565,9 +3330,6 @@ GameObject:
   - component: {fileID: 1683663090}
   - component: {fileID: 1683663089}
   - component: {fileID: 1683663088}
-  - component: {fileID: 1683663087}
-  - component: {fileID: 1683663086}
-  - component: {fileID: 1683663085}
   m_Layer: 3
   m_Name: fourche (4)
   m_TagString: Projectile
@@ -3575,50 +3337,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!136 &1683663085
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683663084}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 8.422953
-  m_Direction: 1
-  m_Center: {x: 0, y: 4.2114763, z: 0.19942072}
---- !u!114 &1683663086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683663084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 20
-  trail: {fileID: 0}
---- !u!54 &1683663087
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683663084}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!65 &1683663088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3853,7 +3571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6668706995472737930, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19ac3a63e40d0264a98efc7d8320a347, type: 3}
@@ -4329,9 +4047,6 @@ GameObject:
   - component: {fileID: 1957929360}
   - component: {fileID: 1957929365}
   - component: {fileID: 1957929364}
-  - component: {fileID: 1957929363}
-  - component: {fileID: 1957929362}
-  - component: {fileID: 1957929361}
   m_Layer: 3
   m_Name: tonneau (3)
   m_TagString: Projectile
@@ -4353,50 +4068,6 @@ Transform:
   m_Father: {fileID: 1251195332}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 59.387, y: -151.632, z: -187.544}
---- !u!136 &1957929361
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957929359}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.1
-  m_Height: 4.704354
-  m_Direction: 1
-  m_Center: {x: -0.00000047683716, y: 2.2, z: 0}
---- !u!114 &1957929362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957929359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 10
-  trail: {fileID: 0}
---- !u!54 &1957929363
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957929359}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!23 &1957929364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5120,9 +4791,6 @@ GameObject:
   - component: {fileID: 2334275454653701286}
   - component: {fileID: 2334275454653701285}
   - component: {fileID: 2334275454653701284}
-  - component: {fileID: 2334275454653701290}
-  - component: {fileID: 8865261009506973459}
-  - component: {fileID: 8984844010357592386}
   m_Layer: 3
   m_Name: tonneau
   m_TagString: Projectile
@@ -5130,22 +4798,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!54 &2334275454653701290
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2334275454653701289}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!33 &2883089659124874544
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5233,22 +4885,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3619754503371560607}
   m_Mesh: {fileID: -2053194597324102491, guid: 922a4082a00715e428b88a8218deec91, type: 3}
---- !u!54 &3619754503371560604
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3619754503371560607}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!65 &3619754503371560605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5274,9 +4910,6 @@ GameObject:
   - component: {fileID: 3619754503371560595}
   - component: {fileID: 3619754503371560594}
   - component: {fileID: 3619754503371560605}
-  - component: {fileID: 3619754503371560604}
-  - component: {fileID: 7591181425723948325}
-  - component: {fileID: 7669572538126435796}
   m_Layer: 3
   m_Name: fourche
   m_TagString: Projectile
@@ -5381,34 +5014,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7591181425723948325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3619754503371560607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 20
-  trail: {fileID: 0}
---- !u!136 &7669572538126435796
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3619754503371560607}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 8.422953
-  m_Direction: 1
-  m_Center: {x: 0, y: 4.2114763, z: 0.19942072}
 --- !u!33 &8524252061677166240
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5417,31 +5022,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5379603836796652479}
   m_Mesh: {fileID: -8415081440042773596, guid: 56460866e41ee5c4ca360c2dca2bcd19, type: 3}
---- !u!114 &8865261009506973459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2334275454653701289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c876f50d97d734088e4d8a4a3b43e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poids: 10
-  trail: {fileID: 0}
---- !u!136 &8984844010357592386
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2334275454653701289}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 2.1
-  m_Height: 4.704354
-  m_Direction: 1
-  m_Center: {x: -0.00000047683716, y: 2.2, z: 0}
